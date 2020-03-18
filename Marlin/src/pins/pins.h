@@ -169,7 +169,7 @@
 #elif MB(RAMPS_DAGOMA)
   #include "ramps/pins_RAMPS_DAGOMA.h"          // ATmega2560                             env:megaatmega2560
 #elif MB(FYSETC_F6_13)
-  #include "ramps/pins_FYSETC_F6_13.h"          // ATmega2560                             env:FYSETC_F6_13
+  #include "ramps/pins_FYSETC_F6_13.h"          // ATmega2560                             env:fysetc_f6_13
 #elif MB(DUPLICATOR_I3_PLUS)
   #include "ramps/pins_DUPLICATOR_I3_PLUS.h"    // ATmega2560                             env:megaatmega2560
 #elif MB(VORON)
@@ -362,7 +362,8 @@
   #include "lpc1768/pins_BTT_SKR_V1_3.h"        // LPC1768                                env:LPC1768
 #elif MB(GMARSH_X6_REV1)
   #include "lpc1768/pins_GMARSH_X6_REV1.h"      // LPC1768                                env:LPC1768
-
+#elif MB(BIGTREE_SKR_V1_4)
+  #include "lpc1768/pins_BTT_SKR_V1_4.h"        // LPC1768                                env:LPC1768
 //
 // LPC1769 ARM Cortex M3
 //
@@ -460,7 +461,7 @@
 #elif MB(GTM32_MINI_A30)
   #include "stm32/pins_GTM32_MINI_A30.h"        // STM32F1                                env:STM32F103RE
 #elif MB(GTM32_MINI)
-  #include "stm32/pins_GTM32_MINI.h"            // STM32F1                                env:STM32F103RE
+  #include "stm32/pins_GTM32_MINI.h"            // STM32F1                                env:STM32F103RE 
 #elif MB(GTM32_REV_B)
   #include "stm32/pins_GTM32_REV_B.h"           // STM32F1                                env:STM32F103RE
 #elif MB(MORPHEUS)
