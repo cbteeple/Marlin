@@ -1062,11 +1062,11 @@
 #define Y_BED_SIZE 300 // Nozzle is at Y2 when homed
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS 0
-#define Y_MIN_POS 0
+#define X_MIN_POS -2
+#define Y_MIN_POS -2
 #define Z_MIN_POS 0
 #define X_MAX_POS 315 // 15mm Extra space on the right end
-#define Y_MAX_POS 304 // 4mm Extra space behind the bed
+#define Y_MAX_POS 315 // 4mm Extra space behind the bed
 #define Z_MAX_POS 400
 
 /**
@@ -1310,7 +1310,7 @@
 
 // Manually set the home position. Leave these undefined for automatic settings.
 // For DELTA this is the top-center of the Cartesian print volume.
-#define MANUAL_X_HOME_POS -10
+#define MANUAL_X_HOME_POS 0
 #define MANUAL_Y_HOME_POS 0
 //#define MANUAL_Z_HOME_POS 0
 
@@ -1331,7 +1331,7 @@
 #endif
 
 // Homing speeds (mm/m)
-#define HOMING_FEEDRATE_XY (20*60)
+#define HOMING_FEEDRATE_XY (30*60)
 #define HOMING_FEEDRATE_Z  (8*60)
 
 // Validate that endstops are triggered on homing moves
