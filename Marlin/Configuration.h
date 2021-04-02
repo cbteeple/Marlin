@@ -144,7 +144,7 @@
 
 // This defines the number of extruders
 // :[1, 2, 3, 4, 5, 6]
-#define EXTRUDERS 2
+#define EXTRUDERS 1
 
 // Generally expected filament diameter (1.75, 2.85, 3.0, ...). Used for Volumetric, Filament Width Sensor, etc.
 #define DEFAULT_NOMINAL_FILAMENT_DIA 1.75
@@ -295,10 +295,10 @@
  *   - This implementation supports up to two mixing extruders.
  *   - Enable DIRECT_MIXING_IN_G1 for M165 and mixing in G1 (from Pia Taubert's reference implementation).
  */
-//#define MIXING_EXTRUDER
+#define MIXING_EXTRUDER
 #if ENABLED(MIXING_EXTRUDER)
   #define MIXING_STEPPERS 2        // Number of steppers in your mixing extruder
-  #define MIXING_VIRTUAL_TOOLS 16  // Use the Virtual Tool method with M163 and M164
+  #define MIXING_VIRTUAL_TOOLS 100  // Use the Virtual Tool method with M163 and M164
   //#define DIRECT_MIXING_IN_G1    // Allow ABCDHI mix factors in G1 movement commands
   //#define GRADIENT_MIX           // Support for gradient mixing with M166 and LCD
   #if ENABLED(GRADIENT_MIX)
@@ -406,7 +406,7 @@
  *   999 : Dummy Table that ALWAYS reads 100°C or the temperature defined below.
  */
 #define TEMP_SENSOR_0 998
-#define TEMP_SENSOR_1 998
+#define TEMP_SENSOR_1 0
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_3 0
 #define TEMP_SENSOR_4 0
@@ -669,7 +669,7 @@
 //#define Z2_DRIVER_TYPE A4988
 //#define Z3_DRIVER_TYPE A4988
 #define E0_DRIVER_TYPE TMC2130
-#define E1_DRIVER_TYPE TMC2208
+#define E1_DRIVER_TYPE A4988 //TMC2208
 //#define E2_DRIVER_TYPE A4988
 //#define E3_DRIVER_TYPE A4988
 //#define E4_DRIVER_TYPE A4988
@@ -718,7 +718,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 45.92, 45.92, 45.92, 45.92, 45.92}
+#define DEFAULT_AXIS_STEPS_PER_UNIT { 82.96, 82.96, 82.96, 45.92, 45.92} // { 53.333, 53.333, 53.333, 45.92, 45.92}
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -1020,7 +1020,7 @@
 // @section machine
 
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
-#define INVERT_X_DIR false
+#define INVERT_X_DIR true
 #define INVERT_Y_DIR false
 #define INVERT_Z_DIR false
 
@@ -1323,8 +1323,8 @@
 #endif
 
 // Homing speeds (mm/m)
-#define HOMING_FEEDRATE_XY (50*60)
-#define HOMING_FEEDRATE_Z  (4*60)
+#define HOMING_FEEDRATE_XY (60*60)
+#define HOMING_FEEDRATE_Z  (60*60)
 
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS
